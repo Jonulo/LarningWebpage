@@ -1,6 +1,8 @@
 import SideBarMenu from '../templates/SideBarMenu'
 import Home from '../pages/Home'
 import Error404 from '../pages/Error404'
+import testOne from '../pages/testOne'
+import testTwo from '../pages/testTwo'
 
 import getHash from '../utils/router/getHash'
 import resolveRoutes from '../utils/router/resolveRoutes'
@@ -8,7 +10,9 @@ import resolveRoutes from '../utils/router/resolveRoutes'
 import  { openCloseSideBar } from '../utils/sideBarMenu'
 
 const routes = {
-  '/': Home
+  '/': Home,
+  '/first': testOne,
+  '/second': testTwo
 }
 
 

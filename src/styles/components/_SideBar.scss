@@ -1,10 +1,12 @@
 #sidebar{
   position: fixed;
-  display: block;
   border: 1px dashed red;
   width: 5%;
   height: 100%;
 }
 .sidebar-btn {
   width: 100%!important;  
+}
+.sidebar__menu {
+  // display: none;
 }

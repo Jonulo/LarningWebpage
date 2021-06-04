@@ -1,11 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$font: 'Roboto', sans-serif;
 
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #000;
+}
+
+::selection {
+  color: #fff;
+  background: #000;
+}
 body {
   background-color: #fff;
+  font-family: $font;
 }
 .Main {
   position: relative;
