@@ -2,6 +2,24 @@
 
 $font: 'Roboto', sans-serif;
 
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: 767px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "medium" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -11,7 +29,6 @@ $font: 'Roboto', sans-serif;
   color: #fff;
   background: #000;
 }
-
 ::selection {
   color: #fff;
   background: #000;
@@ -32,4 +49,18 @@ body {
   border: 1px dashed green;
   padding: 5% 10%;
 }
-
+@include respond-to(small) {
+  body {
+    background-color: red;
+  }
+}
+@include respond-to(medium) {
+  body {
+    background-color: green;
+  }
+}
+@include respond-to(large) {
+  body {
+    background-color: #fff;
+  }
+}

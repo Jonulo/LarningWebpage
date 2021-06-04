@@ -1,0 +1,9 @@
+Global:
+  -Add dark/light mode
+
+Responsive design:
+  -define all the breakpoint (https://kinsta.com/blog/responsive-web-design/)
+
+SideBar:
+  -Add transition to open and close functionality
+  -
