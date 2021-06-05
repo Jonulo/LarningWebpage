@@ -3,6 +3,11 @@
 $font: 'Roboto', sans-serif;
 
 @mixin respond-to($breakpoint) {
+  @if $breakpoint == "extra-small" {
+    @media (min-width: 360px) {
+      @content;
+    }
+  }
   @if $breakpoint == "small" {
     @media (min-width: 767px) {
       @content;
@@ -33,30 +38,33 @@ $font: 'Roboto', sans-serif;
   color: #fff;
   background: #000;
 }
-body {
-  background-color: #fff;
-  font-family: $font;
-}
-.Main {
-  position: relative;
-  width: 100%;
-}
-#content {
-  position: relative;
-  width: 95%;
-  height: 100%;
-  margin-left: 5%;
-  border: 1px dashed green;
-  padding: 5% 10%;
+@include respond-to(extra-small) {
+  body {
+    background-color: #fff;
+    font-family: $font;
+    font-size: 16px;
+  }
+  .Main {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #content {
+    position: relative;
+    height: 100%;
+    padding: 5% 10%;
+  }
 }
 @include respond-to(small) {
   body {
-    background-color: red;
+    background-color: #fff;
   }
 }
 @include respond-to(medium) {
   body {
-    background-color: green;
+    background-color: #fff;
+    font-size: 2rem;
   }
 }
 @include respond-to(large) {

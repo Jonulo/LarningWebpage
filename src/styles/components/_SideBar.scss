@@ -1,12 +1,27 @@
-#sidebar{
-  position: fixed;
-  border: 1px dashed red;
-  width: 5%;
-  height: 100%;
+@include respond-to(extra-small) {
+  #sidebar {
+    position: fixed;
+    height: 100%;
+  }
+  .sidebar-btn {
+    width: 100%!important;  
+  }
+  .sidebar-open {
+    border-right: 1px solid gray;
+  }
+  .sidebar__menu {
+    // display: none;
+  }
 }
-.sidebar-btn {
-  width: 100%!important;  
+@include respond-to(small) {
+  #sidebar {
+    position: fixed;
+    border: 1px dashed red;
+    width: 5%;
+    height: 100%;
+  }
 }
-.sidebar__menu {
-  // display: none;
+@include respond-to(medium) {
+}
+@include respond-to(large) {
 }
