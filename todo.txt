@@ -2,8 +2,11 @@ Global:
   -Add dark/light mode
 
 Responsive design:
-  -define all the breakpoint (https://kinsta.com/blog/responsive-web-design/)
+  -(x) define all the breakpoints (https://kinsta.com/blog/responsive-web-design/)
 
 SideBar:
   -Add transition to open and close functionality
-  -
+  -Add icons(maybe) and improve design to button
+  -Add shadow to the right border
+  -How to make the sidebar menu (with submenus)
+  -Transition when darkMode is enable

@@ -30,6 +30,17 @@ $font: 'Roboto', sans-serif;
   align-items: center;
   justify-content: center;
 }
+@mixin button {
+  // color: black;
+  background: white;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
 ::-moz-selection { /* Code for Firefox */
   color: #fff;
   background: #000;
@@ -55,6 +66,10 @@ $font: 'Roboto', sans-serif;
     height: 100%;
     padding: 5% 10%;
   }
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
 }
 @include respond-to(small) {
   body {
@@ -64,7 +79,7 @@ $font: 'Roboto', sans-serif;
 @include respond-to(medium) {
   body {
     background-color: #fff;
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 @include respond-to(large) {

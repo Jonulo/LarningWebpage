@@ -7,7 +7,7 @@ import testTwo from '../pages/testTwo'
 import getHash from '../utils/router/getHash'
 import resolveRoutes from '../utils/router/resolveRoutes'
 
-import  { openCloseSideBar } from '../utils/sideBarMenu'
+import  { sideBarFunctionality } from '../utils/sideBarMenu'
 
 const routes = {
   '/': Home,
@@ -28,7 +28,7 @@ const router = async () => {
 
   content.innerHTML = await render()
 
-  openCloseSideBar()
+  sideBarFunctionality()
 }
 
 

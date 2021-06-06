@@ -3,8 +3,32 @@
     position: fixed;
     height: 100%;
   }
-  .sidebar-btn {
-    width: 100%!important;  
+  .sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem 0;
+    &__icon{
+      display: inline-block;
+      text-align: center;
+      font-size: 1.5rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .sidebar-icon{
+    &--menu {
+      &:hover {
+        color: orange!important;
+      }
+    }
+    &--close {
+      &:hover {
+        color: red!important;
+      }
+    }
   }
   .sidebar-open {
     border-right: 1px solid gray;
@@ -14,14 +38,18 @@
   }
 }
 @include respond-to(small) {
-  #sidebar {
-    position: fixed;
-    border: 1px dashed red;
-    width: 5%;
-    height: 100%;
+  .sidebar-header {
+    &__icon {
+      font-size: 1.8rem;
+    }
   }
 }
 @include respond-to(medium) {
 }
 @include respond-to(large) {
+  .sidebar-header {
+    &__icon {
+      font-size: 2rem;
+    }
+  }
 }
