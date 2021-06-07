@@ -2,6 +2,14 @@
 
 $font: 'Roboto', sans-serif;
 
+$primary-light-color: #FAFAFA;
+$secondary-light-color: #D2D3DB;
+$text-light-color: #000000;
+
+$primary-dark-color: #000000;
+$secondary-dark-color: #313131;
+$text-dark-color: #CCCCCC;
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "extra-small" {
     @media (min-width: 360px) {
@@ -51,9 +59,11 @@ $font: 'Roboto', sans-serif;
 }
 @include respond-to(extra-small) {
   body {
-    background-color: #fff;
+    background-color: $primary-light-color;
     font-family: $font;
     font-size: 16px;
+    color: $text-light-color;
+    font-weight: 600;
   }
   .Main {
     position: relative;
@@ -67,8 +77,8 @@ $font: 'Roboto', sans-serif;
     padding: 5% 10%;
   }
   .dark-mode {
-    background-color: black;
-    color: white;
+    background-color: $primary-dark-color;
+    color: $text-dark-color;
   }
 }
 @include respond-to(small) {
@@ -79,7 +89,7 @@ $font: 'Roboto', sans-serif;
 @include respond-to(medium) {
   body {
     background-color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 @include respond-to(large) {

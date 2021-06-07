@@ -28,13 +28,18 @@ function sideBarFunctionality() {
 
 function activateMode() {
   let sidebarIconMode = document.getElementById("sidebar-toggle-mode-icon");
+  let sideBar = document.getElementById("sidebar");
   
   if(document.body.classList.contains("dark-mode")) {
     sidebarIconMode.textContent = "brightness_7";
-    sidebarIconMode.style.color = "orange";
+    sidebarIconMode.style.color = "yellow";
+    sideBar.classList.remove("sidebar");
+    sideBar.classList.add("sidebar--darkmode");
   }else {
     sidebarIconMode.textContent = "dark_mode";
     sidebarIconMode.style.color = "gray";
+    sideBar.classList.remove("sidebar--darkmode");
+    sideBar.classList.add("sidebar");
   }
 }
 
@@ -65,8 +70,9 @@ function openCloseSideBar(menuIsOpen) {
     contentTag.style.marginLeft = sideBarWidth;
     contentTag.style.width= contentWidth;
     sideBar.style.width = sideBarWidth;
-    sideBar.classList.add('sidebar-open');
-    document.getElementById("sidebar__menu").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("sidebar__menu").style.display = "block";
+    },100)
     sidebarIcon.classList.remove("sidebar-icon--menu")
     sidebarIcon.classList.add("sidebar-icon--close")
     sidebarIcon.textContent = "close";
@@ -74,10 +80,11 @@ function openCloseSideBar(menuIsOpen) {
     sidebarIconMode.style.width = "48%";
     document.getElementById("sidebar-header-wrapper").style.flexDirection = "row";
   } else if(!menuIsOpen) {
-    contentTag.style.marginLeft = closedSideBarWidth;
-    contentTag.style.width= closedContentWidth;
+    setTimeout(() => { 
+      contentTag.style.marginLeft = closedSideBarWidth;
+      contentTag.style.width= closedContentWidth;
+    },200)
     sideBar.style.width = closedSideBarWidth;
-    sideBar.classList.remove('sidebar-open');
     document.getElementById("sidebar__menu").style.display = "none";
     sidebarIcon.classList.remove("sidebar-icon--close")
     sidebarIcon.classList.add("sidebar-icon--menu")
