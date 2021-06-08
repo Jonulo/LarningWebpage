@@ -28,6 +28,15 @@ const router = async () => {
 
   content.innerHTML = await render()
 
+  const domMenuSidebar = document.getElementsByClassName("sidebar-menu__list__links");
+
+  if(route === '/') {
+    domMenuSidebar[0].classList.add("sidebar-selected-link");
+  }else if(route === '/first') {
+    domMenuSidebar[1].classList.add("sidebar-selected-link");
+  }else if(route === '/second') {
+    domMenuSidebar[2].classList.add("sidebar-selected-link");
+  }
   sideBarFunctionality()
 }
 

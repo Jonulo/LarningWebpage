@@ -46,6 +46,7 @@
       list-style: none;
       li {
         font-size: 1rem;
+        margin: 0.2rem 0;
       }
       &__links{
         display: block;
@@ -59,6 +60,11 @@
         }
       }
     }
+  }
+  .sidebar-selected-link {
+    background-color: #CE0E5F;
+    color: white;
+    padding-left: 0.5rem;
   }
 }
 @include respond-to(small) {

@@ -19,7 +19,6 @@ const SideBarMenu = () => {
       <ul id="menu-list" class="sidebar-menu__list">
         <li>
           <a
-            id="sidebar-menu-links"
             class="sidebar-menu__list__links"
             href="#/"
           >
@@ -28,7 +27,6 @@ const SideBarMenu = () => {
         </li>
         <li>
           <a
-            id="sidebar-menu-links"
             class="sidebar-menu__list__links"
             href="#/first"
           >
@@ -37,7 +35,6 @@ const SideBarMenu = () => {
         </li>
         <li>
           <a
-            id="sidebar-menu-links"
             class="sidebar-menu__list__links"
             href="#/second"
           >
