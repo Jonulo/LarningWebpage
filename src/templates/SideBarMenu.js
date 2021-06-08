@@ -15,11 +15,35 @@ const SideBarMenu = () => {
       >
       </span>
     </div>
-    <div id="sidebar__menu" class="sidebar__menu">
-      <ul id="menu-list" class="menu-list">
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/first">First</a></li>
-        <li><a href="#/second">Second</a></li>
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul id="menu-list" class="sidebar-menu__list">
+        <li>
+          <a
+            id="sidebar-menu-links"
+            class="sidebar-menu__list__links"
+            href="#/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            id="sidebar-menu-links"
+            class="sidebar-menu__list__links"
+            href="#/first"
+          >
+            First 
+          </a>
+        </li>
+        <li>
+          <a
+            id="sidebar-menu-links"
+            class="sidebar-menu__list__links"
+            href="#/second"
+          >
+            Second 
+          </a>
+        </li>
       </ul>
 
     </div>

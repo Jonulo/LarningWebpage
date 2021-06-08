@@ -37,8 +37,28 @@
       border-radius: 5px;
     }
   }
-  .sidebar__menu {
+  .sidebar-menu {
     margin: 1rem 0;
+    &__list {
+      position: relative;
+      margin: 0;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      list-style: none;
+      li {
+        font-size: 1rem;
+      }
+      &__links{
+        display: block;
+        color: $text-light-color;
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        &:hover {
+          text-decoration: none;
+        }
+        &--dark {
+          color: $text-dark-color;
+        }
+      }
+    }
   }
 }
 @include respond-to(small) {
@@ -47,13 +67,41 @@
       font-size: 1.8rem;
     }
   }
+  .sidebar-menu {
+    &__list {
+      li {
+        font-size: 1.1rem;
+      }
+    }
+  }
 }
 @include respond-to(medium) {
+  .sidebar-menu {
+    &__list {
+      li {
+      }
+      &__links{
+        transition: linear 0.2s;
+        &:hover {
+          background-color: #CE0E5F;
+          color: white;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+  }
 }
 @include respond-to(large) {
   .sidebar-header {
     &__icon {
       font-size: 2rem;
+    }
+  }
+  .sidebar-menu {
+    &__list {
+      li {
+        font-size: 1.3rem;
+      }
     }
   }
 }

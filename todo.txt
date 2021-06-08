@@ -10,3 +10,7 @@ SideBar:
   -Add shadow to the right border
   -How to make the sidebar menu (with submenus) https://www.w3schools.com/howto/howto_js_dropdown_sidenav.asp
   -(X) Transition when darkMode is enable
+
+-----
+Add hover to sidebar menu (only for desktop breakpoint)
+find a way to change the sidebar-menu color depending light mode

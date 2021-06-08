@@ -35,11 +35,28 @@ function activateMode() {
     sidebarIconMode.style.color = "yellow";
     sideBar.classList.remove("sidebar");
     sideBar.classList.add("sidebar--darkmode");
+    changeLinksStyle("dark");
   }else {
     sidebarIconMode.textContent = "dark_mode";
     sidebarIconMode.style.color = "gray";
     sideBar.classList.remove("sidebar--darkmode");
     sideBar.classList.add("sidebar");
+    changeLinksStyle();
+  }
+}
+
+function changeLinksStyle(mode="light") {
+  let linksCollection = document.getElementsByClassName("sidebar-menu__list__links");
+  let cssClass = "sidebar-menu__list__links";
+
+  if(mode === "dark") {
+    cssClass = "sidebar-menu__list__links--dark"; 
+  }
+  for(let i=0; i<linksCollection.length; i++) {
+    if(mode === "light") {
+      linksCollection[i].classList.remove("sidebar-menu__list__links--dark");
+    }
+    linksCollection[i].classList.add(cssClass);
   }
 }
 
@@ -47,8 +64,8 @@ function openCloseSideBar(menuIsOpen) {
   let currentScreenWidth = screen.width;
   let sideBarWidth = "40%";
   let contentWidth = "60%";
-  let closedSideBarWidth = "8%";
-  let closedContentWidth = "92%";
+  let closedSideBarWidth = "10%";
+  let closedContentWidth = "90%";
   let sideBar = document.getElementById("sidebar");
   let contentTag = document.getElementById("content");
   let sidebarIcon = document.getElementById("sidebar-toggle-icon");
@@ -71,7 +88,7 @@ function openCloseSideBar(menuIsOpen) {
     contentTag.style.width= contentWidth;
     sideBar.style.width = sideBarWidth;
     setTimeout(() => {
-      document.getElementById("sidebar__menu").style.display = "block";
+      document.getElementById("sidebar-menu").style.display = "block";
     },100)
     sidebarIcon.classList.remove("sidebar-icon--menu")
     sidebarIcon.classList.add("sidebar-icon--close")
@@ -85,7 +102,7 @@ function openCloseSideBar(menuIsOpen) {
       contentTag.style.width= closedContentWidth;
     },200)
     sideBar.style.width = closedSideBarWidth;
-    document.getElementById("sidebar__menu").style.display = "none";
+    document.getElementById("sidebar-menu").style.display = "none";
     sidebarIcon.classList.remove("sidebar-icon--close")
     sidebarIcon.classList.add("sidebar-icon--menu")
     sidebarIcon.textContent = "menu";
