@@ -27,7 +27,7 @@
   }
   .sidebar-icon{
     &--menu, &--close {
-      background-color: #CE0E5F;
+      background-color: $elements-color;
       color: white;
     }
     &--menu {
@@ -62,7 +62,7 @@
     }
   }
   .sidebar-selected-link {
-    background-color: #CE0E5F;
+    background-color: $elements-color;
     color: white;
     padding-left: 0.5rem;
   }
@@ -89,7 +89,7 @@
       &__links{
         transition: linear 0.2s;
         &:hover {
-          background-color: #CE0E5F;
+          background-color: $elements-color;
           color: white;
           padding-left: 0.5rem;
         }

@@ -10,6 +10,8 @@ $primary-dark-color: #000000;
 $secondary-dark-color: #313131;
 $text-dark-color: #CCCCCC;
 
+$elements-color: #CE055F;
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "extra-small" {
     @media (min-width: 360px) {
@@ -55,7 +57,7 @@ $text-dark-color: #CCCCCC;
 }
 ::selection {
   color: #fff;
-  background: #000;
+  background: $elements-color;
 }
 @include respond-to(extra-small) {
   body {
@@ -63,7 +65,7 @@ $text-dark-color: #CCCCCC;
     font-family: $font;
     font-size: 16px;
     color: $text-light-color;
-    font-weight: 600;
+    font-weight: 400;
   }
   .Main {
     position: relative;

@@ -28,9 +28,9 @@ const SideBarMenu = () => {
         <li>
           <a
             class="sidebar-menu__list__links"
-            href="#/first"
+            href="#/verbos"
           >
-            First 
+            Verbos 
           </a>
         </li>
         <li>

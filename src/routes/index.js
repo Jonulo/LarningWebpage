@@ -1,7 +1,7 @@
 import SideBarMenu from '../templates/SideBarMenu'
 import Home from '../pages/Home'
 import Error404 from '../pages/Error404'
-import testOne from '../pages/testOne'
+import Verbos from '../pages/verbos'
 import testTwo from '../pages/testTwo'
 
 import getHash from '../utils/router/getHash'
@@ -11,7 +11,7 @@ import  { sideBarFunctionality } from '../utils/sideBarMenu'
 
 const routes = {
   '/': Home,
-  '/first': testOne,
+  '/verbos': Verbos,
   '/second': testTwo
 }
 
@@ -32,7 +32,7 @@ const router = async () => {
 
   if(route === '/') {
     domMenuSidebar[0].classList.add("sidebar-selected-link");
-  }else if(route === '/first') {
+  }else if(route === '/verbos') {
     domMenuSidebar[1].classList.add("sidebar-selected-link");
   }else if(route === '/second') {
     domMenuSidebar[2].classList.add("sidebar-selected-link");
