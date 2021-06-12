@@ -4,6 +4,7 @@
 function sideBarFunctionality() {
   let openNavButton = document.getElementById("sidebar-toggle-icon");
   let toggleIcon = document.getElementById("sidebar-toggle-mode-icon")
+  let dropdown = document.getElementsByClassName("dropdown-btn");
   let menuIsOpen = true;
 
   openCloseSideBar(menuIsOpen)
@@ -24,6 +25,23 @@ function sideBarFunctionality() {
     activateMode()
   })
 
+  for(let i=0; i<dropdown.length; i++) {
+    dropdown[i].children[0].innerHTML = "add";
+    dropdown[i].addEventListener("click", () => {
+      let dropdownContent = dropdown[i].nextElementSibling;
+      dropdown[i].classList.toggle("dropdown-btn--selected");
+      if(dropdownContent.style.display === "block") {
+        dropdown[i].children[0].innerHTML = "add";
+        dropdownContent.style.display = "none";
+        dropdown[i].style.marginBottom= ".5rem";
+      }
+      else {
+        dropdown[i].children[0].innerHTML = "remove";
+        dropdownContent.style.display = "block";
+        dropdown[i].style.marginBottom= "0";
+      }
+    })
+  }
 }
 
 function activateMode() {
@@ -47,16 +65,26 @@ function activateMode() {
 
 function changeLinksStyle(mode="light") {
   let linksCollection = document.getElementsByClassName("sidebar-menu__list__links");
-  let cssClass = "sidebar-menu__list__links";
+  let paragraphsCollection = document.getElementsByTagName("P");
+  let linksClass = "sidebar-menu__list__links";
+  // let paragraphsClass = "paragraphs";
 
   if(mode === "dark") {
-    cssClass = "sidebar-menu__list__links--dark"; 
+    linksClass = "sidebar-menu__list__links--dark"; 
+    // paragraphsClass = "paragraphs--dark";
   }
   for(let i=0; i<linksCollection.length; i++) {
     if(mode === "light") {
       linksCollection[i].classList.remove("sidebar-menu__list__links--dark");
     }
-    linksCollection[i].classList.add(cssClass);
+    linksCollection[i].classList.add(linksClass);
+  }
+
+  for(let i=0; i<paragraphsCollection.length; i++) {
+    if(mode === "light")
+      paragraphsCollection[i].classList.remove("paragraphs--dark");
+    else
+      paragraphsCollection[i].classList.add("paragraphs--dark");
   }
 }
 
@@ -87,9 +115,11 @@ function openCloseSideBar(menuIsOpen) {
     contentTag.style.marginLeft = sideBarWidth;
     contentTag.style.width= contentWidth;
     sideBar.style.width = sideBarWidth;
+    sidebarIcon.style.pointerEvents = "none";
     setTimeout(() => {
       document.getElementById("sidebar-menu").style.display = "block";
-    },100)
+      sidebarIcon.style.pointerEvents = "auto";
+    },250)
     sidebarIcon.classList.remove("sidebar-icon--menu")
     sidebarIcon.classList.add("sidebar-icon--close")
     sidebarIcon.textContent = "close";
@@ -97,10 +127,8 @@ function openCloseSideBar(menuIsOpen) {
     sidebarIconMode.style.width = "48%";
     document.getElementById("sidebar-header-wrapper").style.flexDirection = "row";
   } else if(!menuIsOpen) {
-    setTimeout(() => { 
-      contentTag.style.marginLeft = closedSideBarWidth;
-      contentTag.style.width= closedContentWidth;
-    },200)
+    contentTag.style.marginLeft = closedSideBarWidth;
+    contentTag.style.width= closedContentWidth;
     sideBar.style.width = closedSideBarWidth;
     document.getElementById("sidebar-menu").style.display = "none";
     sidebarIcon.classList.remove("sidebar-icon--close")

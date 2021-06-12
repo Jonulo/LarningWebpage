@@ -25,22 +25,41 @@ const SideBarMenu = () => {
             Home
           </a>
         </li>
+        <li class="sidebar-menu__list__links dropdown-btn">
+          Verbos
+          <span class="material-icons dropdown-btn__icon"></span>
+        </li>
+        <div class="dropdown-container">
+          <ul class="dropdown-container__list">
+            <li>
+              <a href="#/verbs-intro" class="dropdown-link">
+                Introducción
+              </a>
+            </li>
+            <li>
+              <a href="#/verbs-to-be" class="dropdown-link">
+                Verbo To Be 
+              </a>
+            </li>
+          </ul>
+        </div>
         <li>
           <a
             class="sidebar-menu__list__links"
-            href="#/verbos"
+            href="#/pronouns"
           >
-            Verbos 
+            Pronombres 
           </a>
         </li>
         <li>
           <a
             class="sidebar-menu__list__links"
-            href="#/second"
+            href="#/auxiliar-verbs"
           >
-            Second 
+            Verbos Auxiliares 
           </a>
         </li>
+
       </ul>
 
     </div>

@@ -1,6 +1,7 @@
 @include respond-to(extra-small) {
   #sidebar {
     position: fixed;
+    z-index: 1;
     height: 100%;
     transition: width 0.5s;
   }
@@ -25,7 +26,7 @@
       }
     }
   }
-  .sidebar-icon{
+  .sidebar-icon {
     &--menu, &--close {
       background-color: $elements-color;
       color: white;
@@ -43,10 +44,13 @@
       position: relative;
       margin: 0;
       padding: 0.5rem 0 0.5rem 0.5rem;
-      list-style: none;
       li {
         font-size: 1rem;
-        margin: 0.2rem 0;
+        margin: 0;
+        margin-bottom: .5rem;
+      }
+      li:nth-of-type(2) {
+        margin-bottom: 0;
       }
       &__links{
         display: block;
@@ -66,6 +70,38 @@
     color: white;
     padding-left: 0.5rem;
   }
+  .dropdown-btn {
+    position: relative;
+    &__icon {
+      position: absolute;
+      font-size: 1.3rem;
+      right: 0;
+    }
+    &--selected {
+      padding-left: 0.5rem;
+      border-left: 2px solid $elements-color;
+    }
+  }
+  .dropdown-container {
+    display: none;
+    margin-bottom: .5rem;
+    border-left: 2px solid $elements-color;
+    &__list {
+      background-color: rgba(255,255,255,0.2);
+      padding-bottom: .5rem;
+      padding-left: 1rem;
+      & > li {
+        margin-bottom: .5rem;
+        padding: .3rem;
+      }
+    }
+  }
+  .dropdown-link {
+    font-size: .9rem;
+    &--selected {
+      border-bottom: 3px solid $elements-color;
+    }
+  }
 }
 @include respond-to(small) {
   .sidebar-header {
@@ -80,12 +116,13 @@
       }
     }
   }
+  .dropdown-link {
+    font-size: 1rem;
+  }
 }
 @include respond-to(medium) {
   .sidebar-menu {
     &__list {
-      li {
-      }
       &__links{
         transition: linear 0.2s;
         &:hover {
@@ -94,6 +131,31 @@
           padding-left: 0.5rem;
         }
       }
+    }
+  }
+  .dropdown-btn {
+    &__icon {
+      font-size: 2rem;
+    }
+    &--selected {
+      border-left: 4px solid $elements-color;
+    }
+    &:hover {
+      cursor: pointer; 
+    }
+  }
+  .dropdown-container {
+    border-left: 4px solid $elements-color;
+    &__list {
+      padding-bottom: 1rem;
+      padding-left: 2rem;
+    }
+  }
+  .dropdown-link {
+    transition: linear .2s;
+    font-size: 1.1rem;
+    &:hover {
+      border-bottom: 3px solid $elements-color;
     }
   }
 }
@@ -109,5 +171,8 @@
         font-size: 1.3rem;
       }
     }
+  }
+  .dropdown-link {
+    font-size: 1.2rem;
   }
 }

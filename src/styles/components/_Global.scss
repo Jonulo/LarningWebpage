@@ -65,7 +65,7 @@ $elements-color: #CE055F;
     font-family: $font;
     font-size: 16px;
     color: $text-light-color;
-    font-weight: 400;
+    font-weight: 600;
   }
   .Main {
     position: relative;
@@ -76,22 +76,87 @@ $elements-color: #CE055F;
   #content {
     position: relative;
     height: 100%;
-    padding: 5% 10%;
+    padding: 10% 10%;
+    transition: margin-left .5s;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    display: inline;
+    padding: 0.5rem 5% 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    background-color: $elements-color;
+    color: white;
+    border-radius: 10px;
+  }
+  h3 {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  p {
+    color: #3b3e4d;
+    margin: 1rem 0 1rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    transition: color 1s;
+  }
+  ul {
+    list-style: none;
+  }
+  .paragraphs--dark {
+    color: $text-dark-color;
   }
   .dark-mode {
     background-color: $primary-dark-color;
     color: $text-dark-color;
+  }
+  .words-links {
+    font-weight: bolder;
+    border-bottom: 3px dotted $elements-color;
   }
 }
 @include respond-to(small) {
   body {
     background-color: #fff;
   }
+  #content {
+    padding: 5% 5%;
+  }
 }
 @include respond-to(medium) {
   body {
     background-color: #fff;
+  }
+  #content {
+    padding: 3% 5%;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
     font-size: 1.2rem;
+  }
+  .words-links {
+    border-bottom: 4px dotted gray;
+    &:hover {
+      cursor: pointer;
+      color: $elements-color;
+      border-bottom: 4px dotted $elements-color;
+    }
   }
 }
 @include respond-to(large) {

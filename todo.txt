@@ -9,5 +9,6 @@ SideBar:
   -(X) Add icons(maybe) and improve design to button
   -How to make the sidebar menu (with submenus) https://www.w3schools.com/howto/howto_js_dropdown_sidenav.asp
   -(X) Transition when darkMode is enable
+  -Add some transition to sidebar-menu when the mode changes.
 
 -----
