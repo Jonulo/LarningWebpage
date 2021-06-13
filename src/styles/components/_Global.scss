@@ -108,6 +108,9 @@ $elements-color: #CE055F;
     line-height: 1.8;
     transition: color 1s;
   }
+  strong {
+    color: $elements-color;
+  }
   ul {
     list-style: none;
   }
@@ -121,6 +124,44 @@ $elements-color: #CE055F;
   .words-links {
     font-weight: bolder;
     border-bottom: 3px dotted $elements-color;
+  }
+  .table-container {
+    // @include flex-center;  
+    overflow-x: auto;
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    th {
+      background-color: $elements-color;
+      font-size: 1.1rem;
+      color: white;
+    }
+    td {
+      font-size: 1rem;
+    }
+  }
+  .tips {
+    @include flex-center;
+    &__content {
+      display: inline-block;
+      text-align: center;
+      border: 2px solid $elements-color;
+      border-radius: 10px;
+      & > p {
+        margin: 0;
+        padding: 1rem;
+        & > a {
+          color: $elements-color;
+        }
+      }
+    }
   }
 }
 @include respond-to(small) {
@@ -156,6 +197,16 @@ $elements-color: #CE055F;
       cursor: pointer;
       color: $elements-color;
       border-bottom: 4px dotted $elements-color;
+    }
+  }
+  .table {
+    th {
+      background-color: $elements-color;
+      font-size: 1.5rem;
+      color: white;
+    }
+    td {
+      font-size: 1.3rem;
     }
   }
 }

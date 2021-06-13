@@ -44,12 +44,12 @@
       position: relative;
       margin: 0;
       padding: 0.5rem 0 0.5rem 0.5rem;
-      li {
+      & > li {
         font-size: 1rem;
         margin: 0;
         margin-bottom: .5rem;
       }
-      li:nth-of-type(2) {
+      & > li:nth-of-type(2) {
         margin-bottom: 0;
       }
       &__links{

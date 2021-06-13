@@ -41,6 +41,11 @@ const SideBarMenu = () => {
                 Verbo To Be 
               </a>
             </li>
+            <li>
+              <a href="#/verbs-to-be" class="dropdown-link">
+                Conjugaciones 
+              </a>
+            </li>
           </ul>
         </div>
         <li>
