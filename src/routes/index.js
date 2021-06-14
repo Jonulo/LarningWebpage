@@ -1,24 +1,30 @@
-import SideBarMenu from '../templates/SideBarMenu'
-import Home from '../pages/Home'
-import Error404 from '../pages/Error404'
-import Verbs from '../pages/verbs'
-import Pronouns from '../pages/pronouns'
-import Auxiliar_verbs from '../pages/auxiliar_verbs'
-import verbToBe from '../pages/verb_tobe'
+import SideBarMenu from '../templates/SideBarMenu';
+import Home from '../pages/Home';
+import Error404 from '../pages/Error404';
+import Pronouns from '../pages/pronouns';
+import
+  {
+    Intro,
+    VerbTobe,
+    AuxiliarVerbs
+  } from '../pages/verbsSection/';
 
-import getHash from '../utils/router/getHash'
-import resolveRoutes from '../utils/router/resolveRoutes'
+import 
+  {
+    getHash,
+    resolveRoutes,
+    sideBarFunctionality
+  } from '../utils/';
 
-import  { sideBarFunctionality } from '../utils/sideBarMenu'
+import routeConfiguration from './config';
 
 const routes = {
   '/': Home,
-  '/verbs-intro': Verbs,
+  '/verbs-intro': Intro,
+  '/verbs-to-be': VerbTobe,
+  '/verbs-auxiliar-verbs': AuxiliarVerbs,
   '/pronouns': Pronouns,
-  '/auxiliar-verbs': Auxiliar_verbs,
-  '/verbs-to-be': verbToBe
 }
-
 
 const router = async () => { 
   const sidebar = document.getElementById('sidebar') || null;
@@ -32,29 +38,9 @@ const router = async () => {
 
   content.innerHTML = await render();
 
-  const domMenuSidebar = document.getElementsByClassName("sidebar-menu__list__links");
-  const dropdownElements = document.getElementsByClassName("dropdown-btn");
+  sideBarFunctionality();
 
-  sideBarFunctionality()
-
-  if(route === '/') {
-    domMenuSidebar[0].classList.add("sidebar-selected-link");
-  }else if(route === '/verbs-intro') {
-    dropdownElements[0].classList.add("sidebar-selected-link");
-    dropdownElements[0].nextElementSibling.style.display = "block";
-    dropdownElements[0].nextElementSibling.getElementsByClassName("dropdown-link")[0].classList.add("dropdown-link--selected");
-    dropdownElements[0].children[0].innerHTML = "remove";
-  }else if(route === '/verbs-to-be') {
-    dropdownElements[0].classList.add("sidebar-selected-link");
-    dropdownElements[0].nextElementSibling.style.display = "block";
-    dropdownElements[0].nextElementSibling.getElementsByClassName("dropdown-link")[1].classList.add("dropdown-link--selected");
-    dropdownElements[0].children[0].innerHTML = "remove";
-  }else if(route === '/pronouns') {
-    domMenuSidebar[2].classList.add("sidebar-selected-link");
-  }else if(route === '/auxiliar-verbs') {
-    domMenuSidebar[3].classList.add("sidebar-selected-link");
-  }
+  routeConfiguration(route);
 }
 
-
-export default router
+export default router;

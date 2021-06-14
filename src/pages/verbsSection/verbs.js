@@ -6,6 +6,7 @@ const testOne = () => {
       como internas (amar, pensar, etc.). Solo con una palabra puedes dar a entender a una persona lo que quieres o por lo que estas pasando.
     </p><br>
     <div class="tips">
+    <!--
       <div class="tips__content">
         <p>Para más información de este tema
           <a href="https://www.grammarly.com/blog/verbs/" target="_blank">
@@ -13,6 +14,7 @@ const testOne = () => {
           </a>
         </p>
       </div>
+    -->
     </div><br>
     <h3>¿Qué es un verbo?</h3>
     <p>

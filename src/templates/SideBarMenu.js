@@ -46,6 +46,11 @@ const SideBarMenu = () => {
                 Conjugaciones 
               </a>
             </li>
+            <li>
+              <a href="#/verbs-auxiliar-verbs" class="dropdown-link">
+                Verbos Auxiliares 
+              </a>
+            </li>
           </ul>
         </div>
         <li>
@@ -56,15 +61,6 @@ const SideBarMenu = () => {
             Pronombres 
           </a>
         </li>
-        <li>
-          <a
-            class="sidebar-menu__list__links"
-            href="#/auxiliar-verbs"
-          >
-            Verbos Auxiliares 
-          </a>
-        </li>
-
       </ul>
 
     </div>

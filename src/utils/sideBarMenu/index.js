@@ -1,6 +1,3 @@
-// https://www.w3schools.com/w3css/w3css_sidebar.asp
-// https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_sidebar_shift
-
 function sideBarFunctionality() {
   let openNavButton = document.getElementById("sidebar-toggle-icon");
   let toggleIcon = document.getElementById("sidebar-toggle-mode-icon")
