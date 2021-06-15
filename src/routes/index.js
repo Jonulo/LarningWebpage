@@ -6,6 +6,7 @@ import
   {
     Intro,
     VerbTobe,
+    Conjugations,
     AuxiliarVerbs
   } from '../pages/verbsSection/';
 
@@ -22,6 +23,7 @@ const routes = {
   '/': Home,
   '/verbs-intro': Intro,
   '/verbs-to-be': VerbTobe,
+  '/verbs-conjugations': Conjugations,
   '/verbs-auxiliar-verbs': AuxiliarVerbs,
   '/pronouns': Pronouns,
 }
