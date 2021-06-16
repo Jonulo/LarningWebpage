@@ -126,8 +126,8 @@ $elements-color: #CE055F;
     border-bottom: 3px dotted $elements-color;
   }
   .table-container {
-    // @include flex-center;  
     overflow-x: auto;
+    margin: 1rem 0;
   }
   .table {
     width: 100%;

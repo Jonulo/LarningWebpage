@@ -26,25 +26,25 @@ function routeConfiguration(route) {
     dropdownElements[0].nextElementSibling.
       getElementsByClassName("dropdown-link")[2].classList.add("dropdown-link--selected");
     dropdownElements[0].children[0].innerHTML = "remove";
-    let tableContent = [
-      [
-        "I",
-        "He"
-      ],
-      [
-        "-",
-        "-",
-        "will",
-        "would",
-        "should",
-        "must",
-        "has to",
-        "may/might",
-        "can/could"
-      ],
-      ["spoken"]
-    ]
-    tableComponent(tableContent);
+    let tableWrappers = document.querySelectorAll(".table-container");
+    console.log("let see..", tableWrappers)
+    const pronouns = ["I", "He"];
+    const auxiliarVerbs = ["will","would","should","must","has to","may/might","can/could"];
+
+    let simpleTable = [
+      pronouns,
+      ["-","","","used to","(was,were)/is going to", ...auxiliarVerbs],
+      ["speak","speaks","spoke", "speak"]
+    ];
+    let progressiveTable = [
+      pronouns,
+      ["am","is","was","was going to be",...auxiliarVerbs],
+      ["-","-","-","-","be"],
+      ["speaking"]
+    ];
+
+    tableComponent(simpleTable, tableWrappers[0]);
+    tableComponent(progressiveTable, tableWrappers[1]);
   }else if(route === '/verbs-auxiliar-verbs') {
     dropdownElements[0].classList.add("sidebar-selected-link");
     dropdownElements[0].nextElementSibling.style.display = "block";

@@ -1,6 +1,6 @@
-var conjugationTable = (data) => {
+var conjugationTable = (data, tableElem) => {
 
-  let tableWrapper = document.querySelector(".conjugation-table-wrapper");
+  // let tableWrapper = document.querySelector(".table-container");
   let tableElement = document.createElement("table");
   tableElement.classList.add("table");
   let pivotCells = [Object, Object, Object];
@@ -27,8 +27,8 @@ var conjugationTable = (data) => {
     tableElement.appendChild(tableElementRow);
   }
 
-  tableWrapper.appendChild(tableElement);
-  return tableWrapper;
+  tableElem.appendChild(tableElement);
+  return tableElem;
 }
 
 export default conjugationTable;
